@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>com.faburaya.Reusable.MediaCodecs.Webp</PackageId>
+    <Authors>Felipe Vieira Aburaya</Authors>
+    <Description>Eine Sammlung von wiederverwendbaren Klassen, die für die Entwicklung von Anwendungen nützlich sind, die Bilder im WebP-Format behandeln.</Description>
+    <PackageProjectUrl>https://dev.azure.com/faburaya/Reusable.NET</PackageProjectUrl>
+    <RepositoryUrl>https://dev.azure.com/faburaya/Reusable.NET/_git/Reusable.MediaCodecs.Webp</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>media codec webp</PackageTags>
+    <Version>2.0.2</Version>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>.\$(MSBuildProjectName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+	<None Include="..\libwebp\bin64\libwebp.dll">
+		<Pack>True</Pack>
+		<PackagePath>\lib\$(TargetFramework)</PackagePath>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Decoder.Webp.NativeInterop\Decoder.Webp.NativeInterop.vcxproj" />
+  </ItemGroup>
+
+</Project>
