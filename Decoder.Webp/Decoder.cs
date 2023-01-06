@@ -1,4 +1,4 @@
-﻿namespace Reusable.MediaCodecs.Webp
+﻿namespace Decoder.Webp
 {
     /// <summary>
     /// Decodiert Bilder im WebP-Format.

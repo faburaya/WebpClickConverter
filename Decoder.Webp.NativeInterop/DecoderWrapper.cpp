@@ -31,7 +31,7 @@ static Exception^ CreateException(VP8StatusCode status)
 	}
 }
 
-array<Byte>^ Reusable::MediaCodecs::Webp::NativeInterop::DecoderWrapper::DecodeWebpToBgra(
+array<Byte>^ Decoder::Webp::NativeInterop::DecoderWrapper::DecodeWebpToBgra(
 	String^ imageFilePath,
 	[Out] Int32% widthPixels,
 	[Out] Int32% heightPixels)

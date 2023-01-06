@@ -4,20 +4,20 @@
         <name>Decoder.Webp</name>
     </assembly>
     <members>
-        <member name="T:Reusable.MediaCodecs.Webp.WebpDecoder">
+        <member name="T:Decoder.Webp.WebpDecoder">
             <summary>
             Decodiert Bilder im WebP-Format.
             </summary>
         </member>
-        <member name="M:Reusable.MediaCodecs.Webp.WebpDecoder.DecodeToBgraAsync(System.String)">
+        <member name="M:Decoder.Webp.WebpDecoder.DecodeToBgraAsync(System.String)">
             <inheritdoc/>
         </member>
-        <member name="T:Reusable.MediaCodecs.IImageDecoder">
+        <member name="T:Decoder.Webp.IImageDecoder">
             <summary>
             Schnittstelle zur Decodierung von Bilddaten.
             </summary>
         </member>
-        <member name="M:Reusable.MediaCodecs.IImageDecoder.DecodeToBgraAsync(System.String)">
+        <member name="M:Decoder.Webp.IImageDecoder.DecodeToBgraAsync(System.String)">
             <summary>
             Decodiert das Bild, indem dessen Daten in BGRA umgewandelt werden.
             </summary>

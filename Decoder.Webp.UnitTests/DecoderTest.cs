@@ -2,7 +2,7 @@
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-namespace Reusable.MediaCodecs.Webp.UnitTests
+namespace Decoder.Webp.UnitTests
 {
     public class DecoderTest
     {

@@ -1,4 +1,4 @@
-﻿namespace Reusable.MediaCodecs
+﻿namespace Decoder.Webp
 {
     /// <summary>
     /// Schnittstelle zur Decodierung von Bilddaten.

@@ -6,16 +6,6 @@
     <Platforms>x64</Platforms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>com.faburaya.Reusable.MediaCodecs.Webp</PackageId>
-    <Authors>Felipe Vieira Aburaya</Authors>
-    <Description>Eine Sammlung von wiederverwendbaren Klassen, die für die Entwicklung von Anwendungen nützlich sind, die Bilder im WebP-Format behandeln.</Description>
-    <PackageProjectUrl>https://dev.azure.com/faburaya/Reusable.NET</PackageProjectUrl>
-    <RepositoryUrl>https://dev.azure.com/faburaya/Reusable.NET/_git/Reusable.MediaCodecs.Webp</RepositoryUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageTags>media codec webp</PackageTags>
-    <Version>2.0.2</Version>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>.\$(MSBuildProjectName).xml</DocumentationFile>
   </PropertyGroup>
