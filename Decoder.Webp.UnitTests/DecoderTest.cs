@@ -6,13 +6,8 @@ namespace Decoder.Webp.UnitTests
 {
     public class DecoderTest
     {
-        private static readonly string imageResourcesDirName = "resources";
-
-        private static readonly string bitmapReferenceFilePath =
-            Path.Combine(imageResourcesDirName, "pic.jpg");
-
-        private static readonly string webpImageFilePath =
-            Path.Combine(imageResourcesDirName, "pic.webp");
+        private static readonly string bitmapReferenceFilePath = "pic.jpg";
+        private static readonly string webpImageFilePath = "pic.webp";
 
         [Fact]
         public void DecodeWebpToBgraAsync_WebpDecoded_IfComparedToBitmapRef_ThenVerySimilar()

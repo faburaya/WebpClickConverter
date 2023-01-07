@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Encoder</name>
+    </assembly>
+    <members>
+        <member name="T:Encoder.DecodedImage">
+            <summary>
+            Wickelt eine Instanz von <see cref="P:Encoder.DecodedImage.Image"/>, um zu vermeiden,
+            dass ihre verbundene Ressourcen entsorgt werden.
+            </summary>
+        </member>
+        <member name="P:Encoder.DecodedImage.Image">
+            <summary>
+            Das Bild, dessen Ressourcen sichergestellt werden müssen.
+            </summary>
+        </member>
+        <member name="M:Encoder.DecodedImage.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Encoder.DecodedImage.Finalize">
+            <summary>
+            Entsorgt die Ressourcen während der Sammlung durch GC.
+            </summary>
+        </member>
+        <member name="M:Encoder.DecodedImage.CreateBgraImage(System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            Erstellt ein Bild aus Bilddaten.
+            </summary>
+            <param name="width">Die Breite des Bildes in Pixels.</param>
+            <param name="height">Die Höhe des Bildes in Pixels.</param>
+            <param name="bgra">Die Bilddaten in BGRA-Format.</param>
+            <returns>Eine neue Instanz von <see cref="T:Encoder.DecodedImage"/>.</returns>
+        </member>
+        <member name="T:Encoder.IEncoder">
+            <summary>
+            Schinittstelle zur Encodierung der Bilddaten.
+            </summary>
+        </member>
+        <member name="M:Encoder.IEncoder.SaveToFile(System.String,System.Drawing.Image)">
+            <summary>
+            Encodiert und speichert die Bilddaten.
+            </summary>
+            <param name="filePath">Der Dateipfad.</param>
+            <param name="image">Das zu speichernde Bild.</param>
+        </member>
+        <member name="T:Encoder.PngEncoder">
+            <summary>
+            Implementiert die Encodierung zu PNG-Format.
+            </summary>
+        </member>
+        <member name="M:Encoder.PngEncoder.SaveToFile(System.String,System.Drawing.Image)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

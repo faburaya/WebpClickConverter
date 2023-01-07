@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleImageComparison", "Si
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decoder.Webp.UnitTests", "Decoder.Webp.UnitTests\Decoder.Webp.UnitTests.csproj", "{6CF3CB97-625A-4EB3-B414-562624E01AF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encoder", "Encoder\Encoder.csproj", "{01D8E091-95B1-4492-AF5D-BFB8788867E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encoder.UnitTests", "Encoder.UnitTests\Encoder.UnitTests.csproj", "{6695FC90-BF89-4063-8CBE-4151F813EC47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -39,6 +43,14 @@ Global
 		{6CF3CB97-625A-4EB3-B414-562624E01AF4}.Debug|x64.Build.0 = Debug|x64
 		{6CF3CB97-625A-4EB3-B414-562624E01AF4}.Release|x64.ActiveCfg = Release|x64
 		{6CF3CB97-625A-4EB3-B414-562624E01AF4}.Release|x64.Build.0 = Release|x64
+		{01D8E091-95B1-4492-AF5D-BFB8788867E4}.Debug|x64.ActiveCfg = Debug|x64
+		{01D8E091-95B1-4492-AF5D-BFB8788867E4}.Debug|x64.Build.0 = Debug|x64
+		{01D8E091-95B1-4492-AF5D-BFB8788867E4}.Release|x64.ActiveCfg = Release|x64
+		{01D8E091-95B1-4492-AF5D-BFB8788867E4}.Release|x64.Build.0 = Release|x64
+		{6695FC90-BF89-4063-8CBE-4151F813EC47}.Debug|x64.ActiveCfg = Debug|x64
+		{6695FC90-BF89-4063-8CBE-4151F813EC47}.Debug|x64.Build.0 = Debug|x64
+		{6695FC90-BF89-4063-8CBE-4151F813EC47}.Release|x64.ActiveCfg = Release|x64
+		{6695FC90-BF89-4063-8CBE-4151F813EC47}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
