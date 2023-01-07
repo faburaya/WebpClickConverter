@@ -1,27 +1,16 @@
-﻿using System.Drawing;
-
-using Xunit;
+﻿using Xunit;
 
 namespace Encoder.UnitTests
 {
-    public class PngEncoderTest
+    public class PngEncoderTest : EncoderTestBase
     {
         private static readonly string referenceImageFilePath = "pic.jpg";
-        private static readonly string transcodedImageFilePath = "out.png";
+        private static readonly string transcodedImageFilePath = "transcoded_output.png";
 
         [Fact]
-        public void SaveToFile_WhenJpegToPng_ThenEquivalentPicture()
+        public void SaveToFile_WhenTranscodedToPng_ThenEquivalentPicture()
         {
-            using Image referenceImage = Image.FromFile(referenceImageFilePath);
-            PngEncoder encoder = new();
-            encoder.SaveToFile(transcodedImageFilePath, referenceImage);
-
-            using Image transcodedImage = Image.FromFile(transcodedImageFilePath);
-            float percentualDifference =
-                SimpleImageComparison.ImageTool.GetPercentageDifference(
-                    referenceImage, transcodedImage);
-
-            Assert.InRange(percentualDifference, 0.00F, 0.01F);
+            Test(new PngEncoder(), referenceImageFilePath, transcodedImageFilePath, 0.01F);
         }
     }
 }

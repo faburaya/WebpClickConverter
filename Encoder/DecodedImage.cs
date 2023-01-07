@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Encoder
 {
     /// <summary>
-    /// Wickelt eine Instanz von <see cref="Image"/>, um zu vermeiden,
+    /// Wickelt eine Instanz von <see cref="System.Drawing.Image"/>, um zu vermeiden,
     /// dass ihre verbundene Ressourcen entsorgt werden.
     /// </summary>
     public class DecodedImage : IDisposable

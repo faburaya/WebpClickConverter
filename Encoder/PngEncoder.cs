@@ -4,7 +4,7 @@ using System.Drawing.Imaging;
 namespace Encoder
 {
     /// <summary>
-    /// Implementiert die Encodierung zu PNG-Format.
+    /// Implementiert die Encodierung zum PNG-Format.
     /// </summary>
     public class PngEncoder : IEncoder
     {

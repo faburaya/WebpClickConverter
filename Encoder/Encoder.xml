@@ -6,7 +6,7 @@
     <members>
         <member name="T:Encoder.DecodedImage">
             <summary>
-            Wickelt eine Instanz von <see cref="P:Encoder.DecodedImage.Image"/>, um zu vermeiden,
+            Wickelt eine Instanz von <see cref="T:System.Drawing.Image"/>, um zu vermeiden,
             dass ihre verbundene Ressourcen entsorgt werden.
             </summary>
         </member>
@@ -44,9 +44,23 @@
             <param name="filePath">Der Dateipfad.</param>
             <param name="image">Das zu speichernde Bild.</param>
         </member>
+        <member name="T:Encoder.JpegEncoder">
+            <summary>
+            Implementiert die Encodierung zum JPEG-Format.
+            </summary>
+        </member>
+        <member name="M:Encoder.JpegEncoder.#ctor(System.Int32)">
+            <summary>
+            Erstellt eine neue Instanz von <see cref="T:Encoder.JpegEncoder"/>.
+            </summary>
+            <param name="quality">Gibt die Qualität für die Encodierung im Bereich [0,100] an.</param>
+        </member>
+        <member name="M:Encoder.JpegEncoder.SaveToFile(System.String,System.Drawing.Image)">
+            <inheritdoc/>
+        </member>
         <member name="T:Encoder.PngEncoder">
             <summary>
-            Implementiert die Encodierung zu PNG-Format.
+            Implementiert die Encodierung zum PNG-Format.
             </summary>
         </member>
         <member name="M:Encoder.PngEncoder.SaveToFile(System.String,System.Drawing.Image)">

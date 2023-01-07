@@ -43,27 +43,33 @@ namespace WebpClickConverter
                     return (int)Status.FailUsageArgFormat;
             }
 
-            string newExtension;
-            IEncoder encoder;
-            switch (format)
-            {
-                case SupportedFormat.Jpeg:
-                case SupportedFormat.Png:
-                    encoder = new PngEncoder();
-                    newExtension = "png";
-                    break;
-
-                default:
-                    Console.WriteLine(usageErrorMessage);
-                    return (int)Status.FailLogic;
-            }
-
             if (!int.TryParse(args[1], out int quality)
                 || quality < 0
                 || quality > 100)
             {
                 Console.WriteLine(usageErrorMessage);
                 return (int)Status.FailUsageArgQuality;
+            }
+
+            string newExtension;
+            IEncoder encoder;
+            switch (format)
+            {
+                case SupportedFormat.Jpeg:
+                    encoder = new JpegEncoder(quality);
+                    newExtension = "jpg";
+                    break;
+
+                case SupportedFormat.Png:
+                    encoder = new PngEncoder();
+                    newExtension = "png";
+                    Console.WriteLine(
+                        "The quality parameter will be ignored, because the PNG format is lossless.");
+                    break;
+
+                default:
+                    Console.WriteLine(usageErrorMessage);
+                    return (int)Status.FailLogic;
             }
 
             await foreach ((string filePath, byte[] bgra, int width, int height)
@@ -89,8 +95,8 @@ namespace WebpClickConverter
             WebpDecoder decoder = new();
             foreach (string path in filePaths)
             {
-                var decoded = await decoder.DecodeToBgraAsync(path);
-                yield return (path, decoded.decodedData, decoded.widthPixels, decoded.heightPixels);
+                var bgra = await decoder.DecodeToBgraAsync(path);
+                yield return (path, bgra.decodedData, bgra.widthPixels, bgra.heightPixels);
             }
         }
     }
