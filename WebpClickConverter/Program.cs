@@ -95,8 +95,19 @@ namespace WebpClickConverter
             WebpDecoder decoder = new();
             foreach (string path in filePaths)
             {
-                var bgra = await decoder.DecodeToBgraAsync(path);
-                yield return (path, bgra.decodedData, bgra.widthPixels, bgra.heightPixels);
+                byte[] bgra;
+                int width;
+                int height;
+                try
+                {
+                    (bgra, width, height) = await decoder.DecodeToBgraAsync(path);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to decode {path} - {ex.Message}");
+                    continue;
+                }
+                yield return (path, bgra, width, height);
             }
         }
     }

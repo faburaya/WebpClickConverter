@@ -6,28 +6,28 @@
 using namespace System;
 using namespace System::IO;
 
-static Exception^ CreateException(VP8StatusCode status)
+static String^ GetErrorDetails(VP8StatusCode status)
 {
 	switch (status)
 	{
 	case VP8_STATUS_OK:
-		return gcnew Exception("VP8_STATUS_OK");
+		return "VP8_STATUS_OK";
 	case VP8_STATUS_OUT_OF_MEMORY:
-		return gcnew Exception("VP8_STATUS_OUT_OF_MEMORY");
+		return "VP8_STATUS_OUT_OF_MEMORY";
 	case VP8_STATUS_INVALID_PARAM:
-		return gcnew Exception("VP8_STATUS_INVALID_PARAM");
+		return "VP8_STATUS_INVALID_PARAM";
 	case VP8_STATUS_BITSTREAM_ERROR:
-		return gcnew Exception("VP8_STATUS_BITSTREAM_ERROR");
+		return "VP8_STATUS_BITSTREAM_ERROR";
 	case VP8_STATUS_UNSUPPORTED_FEATURE:
-		return gcnew Exception("VP8_STATUS_UNSUPPORTED_FEATURE");
+		return "VP8_STATUS_UNSUPPORTED_FEATURE";
 	case VP8_STATUS_SUSPENDED:
-		return gcnew Exception("VP8_STATUS_SUSPENDED");
+		return "VP8_STATUS_SUSPENDED";
 	case VP8_STATUS_USER_ABORT:
-		return gcnew Exception("VP8_STATUS_USER_ABORT");
+		return "VP8_STATUS_USER_ABORT";
 	case VP8_STATUS_NOT_ENOUGH_DATA:
-		return gcnew Exception("VP8_STATUS_NOT_ENOUGH_DATA");
+		return "VP8_STATUS_NOT_ENOUGH_DATA";
 	default:
-		return gcnew Exception("Nicht unterstützter Fehler!");
+		return "Unbekannter Fehler";
 	}
 }
 
@@ -44,7 +44,8 @@ array<Byte>^ Decoder::Webp::NativeInterop::DecoderWrapper::DecodeWebpToBgra(
 	const VP8StatusCode rc = WebPGetFeatures(rawEncodedDataPtr, encodedData->Length, &features);
 	if (rc != VP8_STATUS_OK)
 	{
-		throw gcnew Exception("WebPGetFeatures ist gescheitert!", CreateException(rc));
+		throw gcnew Exception(
+			String::Format("WebPGetFeatures ist gescheitert: {0}", GetErrorDetails(rc)));
 	}
 
 	heightPixels = static_cast<uint32_t>(features.height);
